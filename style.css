@@ -79,3 +79,21 @@ footer {
   color: #999;
   font-size: 0.9em;
 }
+
+nav {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
