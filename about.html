@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About Kanishk Mitra, developer and student." />
+  <meta name="keywords" content="Kanishk, about, developer, student" />
+  <meta name="author" content="Kanishk Mitra" />
+  <title>About | Kanishk Mitra</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="projects.html">Projects</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <h1>About Me</h1>
+    <p>
+      Hello! I’m Kanishk Mitra — a passionate young developer and lifelong learner.
+    </p>
+    <p>
+      I am currently a student at <strong>[Your School Name]</strong>, and I am <span id="age"></span> years old.
+    </p>
+    <p>
+      I enjoy exploring a variety of programming languages, including Python and C, and I’m continually expanding my skills in software development, web technologies, and Linux operating systems.
+    </p>
+    <p>
+      My journey began with a love for solving problems and building things that matter. Whether it’s writing code to automate tasks or creating small projects that help others, I find joy in every step of the development process.
+    </p>
+    <h2>Interests</h2>
+    <ul>
+      <li><strong>Software Development:</strong> Writing clean, efficient, and reliable code.</li>
+      <li><strong>Web Development:</strong> Building responsive and accessible websites using HTML, CSS, JavaScript, and backend tools.</li>
+      <li><strong>Linux and Open Source:</strong> Exploring the Linux Mint environment and contributing to open-source projects.</li>
+      <li><strong>Security and Hacking:</strong> Learning ethical hacking and cybersecurity principles responsibly.</li>
+    </ul>
+    <p>
+      Outside of programming, I enjoy reading about emerging technologies, participating in coding challenges, and sharing knowledge with fellow learners.
+    </p>
+    <p>
+      My goal is to grow as a versatile developer and contribute meaningful software solutions that make life easier for people worldwide.
+    </p>
+    <p>Thanks for visiting my website — feel free to reach out if you want to collaborate or just say hi!</p>
+  </main>
+
+  <footer>
+    <p>© 2025 Kanishk Mitra</p>
+  </footer>
+
+  <script>
+    function calculateAge(dobString) {
+      const dob = new Date(dobString);
+      const today = new Date();
+      let age = today.getFullYear() - dob.getFullYear();
+      const monthDiff = today.getMonth() - dob.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        age--;
+      }
+      return age;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const ageSpan = document.getElementById('age');
+      if (ageSpan) {
+        ageSpan.textContent = calculateAge('2011-03-13');
+      }
+    });
+  </script>
+</body>
+</html>
