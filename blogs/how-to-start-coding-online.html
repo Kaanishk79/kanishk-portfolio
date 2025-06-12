@@ -6,77 +6,133 @@
   <title>Start Coding Instantly — Even Without a Laptop</title>
   <link rel="stylesheet" href="../css/blog-style.css" />
 
-  <style>
-    main {
-      max-width: 850px;
-      margin: auto;
-      padding: 30px 20px;
-    }
+<style>
+  /* Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    main p, main ul {
-      margin-bottom: 20px;
-    }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+  }
 
-    main ul {
-      padding-left: 20px;
-    }
+  a {
+    color: #00bcd4;
+    text-decoration: none;
+  }
 
-    main h2 {
-      margin: 40px 0 20px;
-      border-left: 4px solid #00bcd4;
-      padding-left: 10px;
-      color: #00bcd4;
-      font-size: 1.6em;
-    }
+  nav {
+    text-align: center;
+    margin: 20px 0;
+  }
 
-    small {
-      color: #ccc;
-    }
+  nav a {
+    color: #bbb;
+    margin: 0 10px;
+    font-weight: bold;
+  }
 
-    nav {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+  header {
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 60px 20px;
+    border-bottom: 2px solid #00bcd4;
+  }
 
-    nav a {
-      color: #bbb;
-      margin: 0 10px;
-      font-weight: bold;
-    }
+  #typing-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-    #typing-subtitle {
-      font-size: 1.2rem;
-      color: #bbb;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #00bcd4;
-      width: 0;
-      animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
-      margin-top: 10px;
-    }
+  #typing-title {
+    font-size: 1.2rem;
+    color: #bbb;
+    text-align: center;
+  }
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
+  main {
+    max-width: 850px;
+    margin: auto;
+    padding: 30px 20px;
+  }
 
-    @keyframes blink {
-      50% { border-color: transparent }
-    }
-  </style>
+  main p, main ul {
+    margin-bottom: 20px;
+  }
+
+  main ul {
+    padding-left: 20px;
+  }
+
+  main h2 {
+    margin: 40px 0 20px;
+    border-left: 4px solid #00bcd4;
+    padding-left: 10px;
+    color: #00bcd4;
+    font-size: 1.6em;
+  }
+
+  small {
+    color: #ccc;
+  }
+
+  footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 0.9em;
+    margin-top: 40px;
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="blog-index.html">Blogs</a>
-    </nav>
-    <h1>Start Coding Instantly — Even Without a Laptop</h1>
-    <p id="typing-subtitle">How to code from anywhere using Replit</p>
-  </header>
+  
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="blog-index.html">Blogs</a>
+</nav>
 
+<header>
+  <h1 id="typing-name"></h1>
+  <p id="typing-title"></p>
+</header>
+
+<script>
+  const nameText = "Start Coding Instantly — Even Without a Laptop";
+  const titleText = "How to code from anywhere using Replit";
+  let nameIndex = 0;
+  let titleIndex = 0;
+
+  function typeName() {
+    if (nameIndex < nameText.length) {
+      document.getElementById("typing-name").textContent += nameText.charAt(nameIndex);
+      nameIndex++;
+      setTimeout(typeName, 40);
+    } else {
+      setTimeout(typeTitle, 500); // wait before subtitle
+    }
+  }
+
+  function typeTitle() {
+    if (titleIndex < titleText.length) {
+      document.getElementById("typing-title").textContent += titleText.charAt(titleIndex);
+      titleIndex++;
+      setTimeout(typeTitle, 40);
+    }
+  }
+
+  typeName();
+</script>
   <main>
     <p><small><strong>Disclosure:</strong> This post contains affiliate links. If a purchase or upgrade is made through these links, a small commission may be earned at no additional cost to you.</small></p>
 
