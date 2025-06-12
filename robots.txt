@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kanishkmitra.netlify.app/sitemap.xml
